@@ -1,25 +1,20 @@
 package jfall.graphql.demo.schema.objecttype;
 
-import com.oembedler.moon.graphql.engine.stereotype.GraphQLDescription;
-import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
-import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
+import com.oembedler.moon.graphql.engine.stereotype.*;
 
 @GraphQLObject("Talk")
 public class Talk {
     private String title;
-    private TimeSlot timeslot;
-    private Talker talker;
+    private String timeslot;
+    private Speaker speaker;
 
     public Talk() {
     }
 
-    public Talk(TalkInput input) {
-        this.title = input.getTitle();
-    }
-
-    public Talk(String title, TimeSlot timeslot) {
+    public Talk(String title, String timeslot, Speaker speaker) {
         this.title = title;
         this.timeslot = timeslot;
+        this.speaker = speaker;
     }
 
     @GraphQLField
@@ -30,12 +25,16 @@ public class Talk {
 
     @GraphQLField
     @GraphQLDescription("The timeslot the talk takes place")
-    public TimeSlot getTimeslot() {
+    public String getTimeslot() {
         return timeslot;
     }
 
+    public void setTimeslot(String timeslot) {
+        this.timeslot = timeslot;
+    }
+
     @GraphQLField
-    public Talker getTalker() {
-        return new Talker();
-    };
+    public Speaker getSpeaker() {
+        return speaker;
+    }
 }

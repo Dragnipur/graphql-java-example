@@ -21,10 +21,8 @@ package jfall.graphql.demo.schema;
 
 import com.oembedler.moon.graphql.engine.stereotype.*;
 import jfall.graphql.demo.schema.objecttype.RootObjectType;
-import jfall.graphql.demo.schema.objecttype.TalkInput;
 import jfall.graphql.demo.schema.objecttype.Talk;
-
-import java.util.List;
+import jfall.graphql.demo.schema.objecttype.TimeslotInput;
 
 @GraphQLSchema
 public class JfallSchema {
@@ -33,11 +31,12 @@ public class JfallSchema {
     private RootObjectType root;
 
     @GraphQLMutation
-    @GraphQLDescription("Mutation to add new talk")
     public
-    @GraphQLOut("Talks")
-    List<Talk> addTalk(@GraphQLIn("talk") TalkInput addTalk) {
-        StaticData.talks.add(new Talk(addTalk));
-        return root.talks();
+    @GraphQLOut("talk")
+    Talk changeTimeslot(@GraphQLIn("TimeSlotInput") TimeslotInput input) {
+        Talk talk = StaticData.talks.get(input.getTalkId());
+        talk.setTimeslot(input.getTimeslot());
+        return talk;
+
     }
 }

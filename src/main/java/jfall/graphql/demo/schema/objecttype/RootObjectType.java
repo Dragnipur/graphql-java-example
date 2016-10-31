@@ -35,12 +35,7 @@ public class RootObjectType {
     }
 
     @GraphQLField
-    public List<TimeSlot> timeslots() {
-        return StaticData.timeslots;
-    }
-
-    @GraphQLField
-    public Talk talk(@GraphQLID @GraphQLIn("title") final String title) {
+    public Talk talk(@GraphQLIn("title") final String title) {
         for (Talk talk : StaticData.talks) {
             if (talk.getTitle().equals(title)) {
                 return talk;

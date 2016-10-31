@@ -4,11 +4,14 @@ import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
 
 @GraphQLObject
-public class Talker {
+public class Speaker {
     private String name;
 
-    public Talker() {
-        this.name = "Henk";
+    public Speaker() {
+    }
+
+    public Speaker(String name) {
+        this.name = name;
     }
 
     @GraphQLField
