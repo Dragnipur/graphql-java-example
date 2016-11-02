@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StaticData {
+    public static String token;
     public static List<Talk> talks = new ArrayList<>();
 
     static {

@@ -19,19 +19,15 @@
 
 package jfall.graphql.demo.schema.objecttype;
 
-import jfall.graphql.demo.schema.StaticData;
-import jfall.graphql.demo.schema.JfallSchema;
 import com.oembedler.moon.graphql.engine.stereotype.*;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
+import jfall.graphql.demo.schema.StaticData;
 
 @GraphQLObject("Root")
 public class RootObjectType {
 
     @GraphQLField
-    public List<Talk> talks() {
-        return StaticData.talks;
+    public Viewer viewer(@GraphQLIn("token") final String token) {
+        return new Viewer(token);
     }
 
     @GraphQLField

@@ -20,6 +20,7 @@
 package jfall.graphql.demo.schema;
 
 import com.oembedler.moon.graphql.engine.stereotype.*;
+import jfall.graphql.demo.schema.objecttype.LoginInput;
 import jfall.graphql.demo.schema.objecttype.RootObjectType;
 import jfall.graphql.demo.schema.objecttype.Talk;
 import jfall.graphql.demo.schema.objecttype.TimeslotInput;
@@ -37,5 +38,12 @@ public class JfallSchema {
         Talk talk = StaticData.talks.get(input.getTalkId());
         talk.setTimeslot(input.getTimeslot());
         return talk;
+    }
+
+    @GraphQLMutation
+    @GraphQLOut("token")
+    public String login(@GraphQLIn("LoginInput") LoginInput input) {
+        //authorization logic
+        return "token";
     }
 }

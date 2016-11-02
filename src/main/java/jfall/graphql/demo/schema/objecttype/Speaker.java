@@ -1,7 +1,7 @@
 package jfall.graphql.demo.schema.objecttype;
 
-import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
-import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
+        import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
+        import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
 
 @GraphQLObject
 public class Speaker {
