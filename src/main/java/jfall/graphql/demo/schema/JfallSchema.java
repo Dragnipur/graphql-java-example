@@ -29,4 +29,13 @@ public class JfallSchema {
 
     @GraphQLSchemaQuery
     private RootObjectType root;
+
+    @GraphQLMutation
+    public
+    @GraphQLOut("talk")
+    Talk changeTimeslot(@GraphQLIn("TimeSlotInput") TimeslotInput input) {
+        Talk talk = StaticData.talks.get(input.getTalkId());
+        talk.setTimeslot(input.getTimeslot());
+        return talk;
+    }
 }
