@@ -1,4 +1,4 @@
-package jfall.graphql.demo.schema.objecttype;
+package nl.kadaster.brk.graphql.jfall.objecttype;
 
 public class LoginInput {
     private String username;

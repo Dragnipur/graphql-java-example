@@ -1,4 +1,4 @@
-package jfall.graphql.demo.schema.objecttype;
+package nl.kadaster.brk.graphql.kadastraalobject;
 
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLDescription;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;

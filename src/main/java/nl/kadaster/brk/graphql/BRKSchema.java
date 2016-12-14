@@ -17,18 +17,14 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package jfall.graphql.demo;
+package nl.kadaster.brk.graphql;
 
-import com.oembedler.moon.graphql.boot.EnableGraphQLServer;
-import graphql.GraphQLError;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.oembedler.moon.graphql.engine.stereotype.*;
 
-@SpringBootApplication
-@EnableGraphQLServer
-public class JfallDemoApp {
+@GraphQLSchema
+public class BRKSchema {
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(JfallDemoApp.class, args);
-    }
+    @GraphQLSchemaQuery
+    private RootObjectType root;
+
 }

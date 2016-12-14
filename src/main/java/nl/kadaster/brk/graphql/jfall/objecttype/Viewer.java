@@ -1,10 +1,10 @@
-package jfall.graphql.demo.schema.objecttype;
+package nl.kadaster.brk.graphql.jfall.objecttype;
 
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLIn;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
 import graphql.schema.DataFetchingEnvironment;
-import jfall.graphql.demo.schema.StaticData;
+import nl.kadaster.brk.graphql.jfall.StaticData;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package jfall.graphql.demo.schema;
+package nl.kadaster.brk.graphql.jfall;
 
 
-import jfall.graphql.demo.schema.objecttype.Speaker;
-import jfall.graphql.demo.schema.objecttype.Talk;
+import nl.kadaster.brk.graphql.jfall.objecttype.Speaker;
+import nl.kadaster.brk.graphql.jfall.objecttype.Talk;
 
 import java.util.ArrayList;
 import java.util.List;

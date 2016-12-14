@@ -17,33 +17,23 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package jfall.graphql.demo.schema.objecttype;
+package nl.kadaster.brk.graphql;
 
-import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
-import com.oembedler.moon.graphql.engine.stereotype.GraphQLIn;
-import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
-import jfall.graphql.demo.schema.StaticData;
+import com.oembedler.moon.graphql.boot.EnableGraphQLServer;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@GraphQLObject("Root")
-public class RootObjectType {
+/**
+ * Sprint Boot starter configuration.
+ *
+ * @author Marc van Andel
+ * @since 0.1
+ */
+@SpringBootApplication
+@EnableGraphQLServer
+public class BrkInzageApp {
 
-    @GraphQLField
-    public KadastraalObject kadastraalObject(@GraphQLIn("kadastraalObjectId") final String kadastraalObjectId) {
-        return new KadastraalObject("NL.KadastraalObject.000000000001", "Rotterdam A1234");
-    }
-
-    @GraphQLField
-    public Viewer viewer(@GraphQLIn("token") final String token) {
-        return new Viewer(token);
-    }
-
-    @GraphQLField
-    public Talk talk(@GraphQLIn("title") final String title) {
-        for (Talk talk : StaticData.talks) {
-            if (talk.getTitle().equals(title)) {
-                return talk;
-            }
-        }
-        return null;
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(BrkInzageApp.class, args);
     }
 }

@@ -17,33 +17,36 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package jfall.graphql.demo.schema;
+package nl.kadaster.brk.graphql;
 
-import com.oembedler.moon.graphql.engine.stereotype.*;
-import jfall.graphql.demo.schema.objecttype.LoginInput;
-import jfall.graphql.demo.schema.objecttype.RootObjectType;
-import jfall.graphql.demo.schema.objecttype.Talk;
-import jfall.graphql.demo.schema.objecttype.TimeslotInput;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLIn;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
+import nl.kadaster.brk.graphql.jfall.StaticData;
+import nl.kadaster.brk.graphql.kadastraalobject.KadastraalObject;
+import nl.kadaster.brk.graphql.jfall.objecttype.Talk;
+import nl.kadaster.brk.graphql.jfall.objecttype.Viewer;
 
-@GraphQLSchema
-public class JfallSchema {
+@GraphQLObject("Root")
+public class RootObjectType {
 
-    @GraphQLSchemaQuery
-    private RootObjectType root;
-
-    @GraphQLMutation
-    public
-    @GraphQLOut("talk")
-    Talk changeTimeslot(@GraphQLIn("TimeSlotInput") TimeslotInput input) {
-        Talk talk = StaticData.talks.get(input.getTalkId());
-        talk.setTimeslot(input.getTimeslot());
-        return talk;
+    @GraphQLField
+    public KadastraalObject kadastraalObject(@GraphQLIn("kadastraalObjectId") final String kadastraalObjectId) {
+        return new KadastraalObject("NL.KadastraalObject.000000000001", "Rotterdam A1234");
     }
 
-    @GraphQLMutation
-    @GraphQLOut("token")
-    public String login(@GraphQLIn("LoginInput") LoginInput input) {
-        //authorization logic
-        return "token";
+    @GraphQLField
+    public Viewer viewer(@GraphQLIn("token") final String token) {
+        return new Viewer(token);
+    }
+
+    @GraphQLField
+    public Talk talk(@GraphQLIn("title") final String title) {
+        for (Talk talk : StaticData.talks) {
+            if (talk.getTitle().equals(title)) {
+                return talk;
+            }
+        }
+        return null;
     }
 }
