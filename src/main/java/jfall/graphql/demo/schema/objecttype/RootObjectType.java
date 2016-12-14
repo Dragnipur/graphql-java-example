@@ -19,11 +19,18 @@
 
 package jfall.graphql.demo.schema.objecttype;
 
-import com.oembedler.moon.graphql.engine.stereotype.*;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLIn;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
 import jfall.graphql.demo.schema.StaticData;
 
 @GraphQLObject("Root")
 public class RootObjectType {
+
+    @GraphQLField
+    public KadastraalObject kadastraalObject(@GraphQLIn("kadastraalObjectId") final String kadastraalObjectId) {
+        return new KadastraalObject("NL.KadastraalObject.000000000001", "Rotterdam A1234");
+    }
 
     @GraphQLField
     public Viewer viewer(@GraphQLIn("token") final String token) {
