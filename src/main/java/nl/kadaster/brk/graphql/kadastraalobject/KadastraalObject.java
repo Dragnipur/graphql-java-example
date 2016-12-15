@@ -27,7 +27,9 @@ public class KadastraalObject {
     @GraphQLField
     @GraphQLDescription("Het type grens van een Perceel")
     public String typeGrens;
-//    public Koopsom koopsom;
+    @GraphQLField
+    @GraphQLDescription("De koopsom bij de laatste overdracht")
+    public Koopsom koopsom;
 //
 //    private List<Aantekening> aantekeningen = new ArrayList<>();
 //    public List<ZakelijkRecht> rechten = new ArrayList<>(); //platgeslagen lijst van rechten

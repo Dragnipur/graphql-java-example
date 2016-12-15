@@ -1,25 +1,32 @@
 package nl.kadaster.brk.graphql.kadastraalobject;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLDescription;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
 import nl.kadaster.brk.graphql.CodeWaarde;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.slf4j.LoggerFactory;
 
-import java.math.BigDecimal;
-
-import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
-
 /**
  * @author Marc van Andel
  * @since 0.1
  */
-@JsonInclude(NON_NULL)
+@GraphQLObject("Koopsom")
 public class Koopsom {
 
-    public BigDecimal bedrag;
+    @GraphQLField
+    @GraphQLDescription("Het bedrag van de koopsom")
+    public double bedrag;
+    // TODO create BigDecimalTypeFunction for public BigDecimal bedrag;
+    @GraphQLField
+    @GraphQLDescription("De valuta van het bedrag")
     public CodeWaarde valuta;
+    @GraphQLField
+    @GraphQLDescription("Het jaar van koop / overdracht waarin dit de koopsom was")
     public Integer koopjaar;
+    @GraphQLField
+    @GraphQLDescription("Indicator of er meerdere objecten betrokken zijn in deze koopsom")
     public boolean meerObjecten;
 
     @Override
@@ -29,7 +36,7 @@ public class Koopsom {
 
     @Override
     public boolean equals(Object that) {
-        boolean  result =  EqualsBuilder.reflectionEquals(this,that);
+        boolean result = EqualsBuilder.reflectionEquals(this, that);
         LoggerFactory.getLogger(this.getClass()).debug("equals:" + result);
         return result;
     }
