@@ -20,6 +20,10 @@
 package nl.kadaster.brk.graphql;
 
 import com.oembedler.moon.graphql.engine.stereotype.*;
+import nl.kadaster.brk.graphql.jfall.StaticData;
+import nl.kadaster.brk.graphql.jfall.objecttype.LoginInput;
+import nl.kadaster.brk.graphql.jfall.objecttype.Talk;
+import nl.kadaster.brk.graphql.jfall.objecttype.TimeslotInput;
 
 @GraphQLSchema
 public class BRKSchema {
@@ -27,4 +31,19 @@ public class BRKSchema {
     @GraphQLSchemaQuery
     private RootObjectType root;
 
+    @GraphQLMutation
+    public
+    @GraphQLOut("talk")
+    Talk changeTimeslot(@GraphQLIn("TimeSlotInput") TimeslotInput input) {
+        Talk talk = StaticData.talks.get(input.getTalkId());
+        talk.setTimeslot(input.getTimeslot());
+        return talk;
+    }
+
+    @GraphQLMutation
+    @GraphQLOut("token")
+    public String login(@GraphQLIn("LoginInput") LoginInput input) {
+        //authorization logic
+        return "token";
+    }
 }

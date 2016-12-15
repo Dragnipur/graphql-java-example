@@ -1,7 +1,7 @@
 package nl.kadaster.koers.view.inzage.api.tenaamstelling;
 
-import nl.kadaster.koers.registratie.datatype.Aandeel;
-import nl.kadaster.koers.registratie.datatype.BepaaldAandeel;
+import nl.kadaster.brk.datatype.Aandeel;
+import nl.kadaster.brk.datatype.BepaaldAandeel;
 import nl.kadaster.koers.view.inzage.api.Identificatie;
 import nl.kadaster.koers.view.inzage.api.aantekening.Aantekening;
 import org.apache.commons.lang3.builder.EqualsBuilder;

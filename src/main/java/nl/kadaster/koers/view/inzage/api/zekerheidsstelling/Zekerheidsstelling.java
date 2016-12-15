@@ -3,7 +3,7 @@ package nl.kadaster.koers.view.inzage.api.zekerheidsstelling;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import nl.kadaster.koers.registratie.datatype.BepaaldAandeel;
+import nl.kadaster.brk.datatype.BepaaldAandeel;
 import nl.kadaster.koers.view.inzage.api.CodeWaarde;
 import nl.kadaster.koers.view.inzage.api.Identificatie;
 

@@ -2,9 +2,9 @@ package nl.kadaster.koers.view.inzage.api.kadastraalobject;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import nl.kadaster.koers.registratie.datatype.TenaamstellingId;
-import nl.kadaster.koers.registratie.datatype.ZakelijkRechtId;
-import nl.kadaster.koers.registratie.datatype.ZekerheidsstellingId;
+import nl.kadaster.brk.datatype.TenaamstellingId;
+import nl.kadaster.brk.datatype.ZakelijkRechtId;
+import nl.kadaster.brk.datatype.ZekerheidsstellingId;
 import nl.kadaster.koers.view.inzage.api.Identificatie;
 import nl.kadaster.koers.view.inzage.api.aantekening.Aantekening;
 import nl.kadaster.koers.view.inzage.api.aantekening.KoopovereenkomstAantekening;
