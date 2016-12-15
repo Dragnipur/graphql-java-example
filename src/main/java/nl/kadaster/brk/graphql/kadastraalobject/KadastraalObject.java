@@ -1,28 +1,9 @@
 package nl.kadaster.brk.graphql.kadastraalobject;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLDescription;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
-import nl.kadaster.brk.datatype.TenaamstellingId;
-import nl.kadaster.brk.datatype.ZakelijkRechtId;
-import nl.kadaster.brk.datatype.ZekerheidsstellingId;
 import nl.kadaster.brk.graphql.Identificatie;
-import nl.kadaster.brk.graphql.aantekening.Aantekening;
-import nl.kadaster.brk.graphql.aantekening.KoopovereenkomstAantekening;
-import nl.kadaster.brk.graphql.zakelijkrecht.ZakelijkRecht;
-import nl.kadaster.brk.graphql.zekerheidsstelling.Zekerheidsstelling;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
-import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 /**
  * @author Marc van Andel
@@ -40,7 +21,9 @@ public class KadastraalObject {
     @GraphQLField
     @GraphQLDescription("De Kadastrale aanduiding van een Kadastraal Object")
     public KadastraleAanduiding aanduiding = new KadastraleAanduiding();
-//    public KadastraleGrootte grootte = new KadastraleGrootte();
+    @GraphQLField
+    @GraphQLDescription("De grootte van een Perceel")
+    public KadastraleGrootte grootte = new KadastraleGrootte();
 //    public String typeGrens;
 //    public Koopsom koopsom;
 //
