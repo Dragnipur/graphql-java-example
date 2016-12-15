@@ -22,10 +22,7 @@ package nl.kadaster.brk.graphql;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLIn;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
-import nl.kadaster.brk.graphql.jfall.StaticData;
 import nl.kadaster.brk.graphql.kadastraalobject.KadastraalObject;
-import nl.kadaster.brk.graphql.jfall.objecttype.Talk;
-import nl.kadaster.brk.graphql.jfall.objecttype.Viewer;
 
 @GraphQLObject("Root")
 public class RootObjectType {
@@ -35,18 +32,4 @@ public class RootObjectType {
         return new KadastraalObject("NL.KadastraalObject.000000000001", "Rotterdam A1234");
     }
 
-    @GraphQLField
-    public Viewer viewer(@GraphQLIn("token") final String token) {
-        return new Viewer(token);
-    }
-
-    @GraphQLField
-    public Talk talk(@GraphQLIn("title") final String title) {
-        for (Talk talk : StaticData.talks) {
-            if (talk.getTitle().equals(title)) {
-                return talk;
-            }
-        }
-        return null;
-    }
 }
