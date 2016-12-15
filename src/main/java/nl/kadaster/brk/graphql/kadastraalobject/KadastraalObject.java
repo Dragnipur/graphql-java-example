@@ -53,7 +53,7 @@ public class KadastraalObject {
     @GraphQLDescription("De (platgeslagen) lijst van zakelijke rechten van dit Kadastraal object")
     public List<ZakelijkRecht> rechten = new ArrayList<>(); //platgeslagen lijst van rechten
     @GraphQLField
-    @GraphQLDescription("De lijst van zekerheidstellingen (hypothecair en beslagen) van dit Kadastraal object")
+    @GraphQLDescription("De lijst van zekerheidsstellingen (hypothecair en beslagen) van dit Kadastraal object")
     public List<Zekerheidsstelling> zekerheidsstellingen = new ArrayList<>();
 
     @GraphQLField
