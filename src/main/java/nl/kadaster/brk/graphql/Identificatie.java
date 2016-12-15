@@ -1,23 +1,24 @@
-package nl.kadaster.koers.view.inzage.api.kadastraalobject;
+package nl.kadaster.brk.graphql;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.slf4j.LoggerFactory;
-
-import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 /**
  * @author Marc van Andel
  * @since 0.1
  */
-@JsonInclude(NON_NULL)
-public class KadastraleGrootte {
+public class Identificatie {
+    public String compositeId;
+    public String kadasterId;
 
-    public Long hectare;
-    public Integer are;
-    public Integer centiare;
+    public Identificatie(String compositeId, String kadasterId) {
+        this.compositeId = compositeId;
+        this.kadasterId = kadasterId;
+    }
 
+    public Identificatie() {
+    }
 
     @Override
     public int hashCode() {
@@ -26,9 +27,8 @@ public class KadastraleGrootte {
 
     @Override
     public boolean equals(Object that) {
-        boolean  result =  EqualsBuilder.reflectionEquals(this,that);
+        boolean result = EqualsBuilder.reflectionEquals(this, that);
         LoggerFactory.getLogger(this.getClass()).debug("equals:" + result);
         return result;
     }
-
 }

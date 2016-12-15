@@ -1,17 +1,17 @@
-package nl.kadaster.koers.view.inzage.api.zekerheidsstelling;
+package nl.kadaster.brk.graphql.zekerheidsstelling;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import nl.kadaster.brk.datatype.BepaaldAandeel;
-import nl.kadaster.koers.view.inzage.api.CodeWaarde;
-import nl.kadaster.koers.view.inzage.api.Identificatie;
+import nl.kadaster.brk.graphql.CodeWaarde;
+import nl.kadaster.brk.graphql.Identificatie;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static nl.kadaster.koers.view.inzage.api.zekerheidsstelling.Zekerheidsstelling.BESLAG;
-import static nl.kadaster.koers.view.inzage.api.zekerheidsstelling.Zekerheidsstelling.HYPOTHECAIR;
+import static nl.kadaster.brk.graphql.zekerheidsstelling.Zekerheidsstelling.BESLAG;
+import static nl.kadaster.brk.graphql.zekerheidsstelling.Zekerheidsstelling.HYPOTHECAIR;
 
 /**
  * @author Marc van Andel

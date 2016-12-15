@@ -1,9 +1,9 @@
-package nl.kadaster.koers.view.inzage.api.tenaamstelling;
+package nl.kadaster.brk.graphql.tenaamstelling;
 
 import nl.kadaster.brk.datatype.Aandeel;
 import nl.kadaster.brk.datatype.BepaaldAandeel;
-import nl.kadaster.koers.view.inzage.api.Identificatie;
-import nl.kadaster.koers.view.inzage.api.aantekening.Aantekening;
+import nl.kadaster.brk.graphql.Identificatie;
+import nl.kadaster.brk.graphql.aantekening.Aantekening;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.slf4j.LoggerFactory;

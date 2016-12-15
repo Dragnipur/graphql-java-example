@@ -1,12 +1,12 @@
-package nl.kadaster.koers.view.inzage.api.aantekening;
+package nl.kadaster.brk.graphql.aantekening;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import nl.kadaster.koers.view.inzage.api.CodeWaarde;
-import nl.kadaster.koers.view.inzage.api.Identificatie;
-import nl.kadaster.koers.view.inzage.api.tenaamstelling.Tenaamstelling;
+import nl.kadaster.brk.graphql.CodeWaarde;
+import nl.kadaster.brk.graphql.Identificatie;
+import nl.kadaster.brk.graphql.tenaamstelling.Tenaamstelling;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -15,8 +15,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
-import static nl.kadaster.koers.view.inzage.api.aantekening.Aantekening.KOOPOVEREENKOMST;
-import static nl.kadaster.koers.view.inzage.api.aantekening.Aantekening.STANDAARD_AANTEKENING;
+import static nl.kadaster.brk.graphql.aantekening.Aantekening.KOOPOVEREENKOMST;
+import static nl.kadaster.brk.graphql.aantekening.Aantekening.STANDAARD_AANTEKENING;
 
 
 /**

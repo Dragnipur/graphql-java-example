@@ -1,4 +1,4 @@
-package nl.kadaster.koers.view.inzage.api;
+package nl.kadaster.brk.graphql.kadastraalobject;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -12,18 +12,24 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
  * @since 0.1
  */
 @JsonInclude(NON_NULL)
-public class CodeWaarde {
+public class KadastraleAanduiding {
 
-    public String code;
-    public String waarde;
+    public String kadastraleGemeente;
+    public String sectie;
+    public String perceelNummer;
+    public String appartementsrechtVolgnummer;
 
-    public CodeWaarde() {
-        //for jackson
+    public String getAanduiding() {
+        return kadastraleGemeente +
+            " " +
+            sectie +
+            " " +
+            perceelNummer +
+            (appartementsrechtVolgnummer != null ? "A" + appartementsrechtVolgnummer : "");
     }
 
-    public CodeWaarde(String code, String waarde) {
-        this.code = code;
-        this.waarde = waarde;
+    public void setAanduiding(String aanduiding) {
+        // afgeleid veld
     }
 
     @Override
@@ -37,4 +43,5 @@ public class CodeWaarde {
         LoggerFactory.getLogger(this.getClass()).debug("equals:" + result);
         return result;
     }
+
 }

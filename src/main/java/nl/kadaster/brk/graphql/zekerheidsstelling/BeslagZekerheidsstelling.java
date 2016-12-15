@@ -1,6 +1,6 @@
-package nl.kadaster.koers.view.inzage.api.zekerheidsstelling;
+package nl.kadaster.brk.graphql.zekerheidsstelling;
 
-import nl.kadaster.koers.view.inzage.api.CodeWaarde;
+import nl.kadaster.brk.graphql.CodeWaarde;
 
 /**
  * @author Marc van Andel

@@ -39,7 +39,7 @@ repositories {
 dependencies {
     compile('nl.kadaster.brk:brk-datatypes:0.1.0-SNAPSHOT')
 
-    compile('com.graphql-java:graphql-java:2.1.0')
+    compile('com.graphql-java:graphql-java:2.2.0')
     compile 'com.embedler.moon.graphql.boot.starter:graphql-spring-boot-starter:2.1.0-2016-04-29T09-27-45'
     compile 'com.embedler.moon.graphql.boot.starter:graphiql-spring-boot-starter:2.1.0-2016-04-29T09-27-45'
 

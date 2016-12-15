@@ -1,7 +1,7 @@
-package nl.kadaster.koers.view.inzage.api.kadastraalobject;
+package nl.kadaster.brk.graphql.kadastraalobject;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import nl.kadaster.koers.view.inzage.api.CodeWaarde;
+import nl.kadaster.brk.graphql.CodeWaarde;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.slf4j.LoggerFactory;

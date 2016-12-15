@@ -1,8 +1,8 @@
-package nl.kadaster.koers.view.inzage.api.zakelijkrecht;
+package nl.kadaster.brk.graphql.zakelijkrecht;
 
-import nl.kadaster.koers.view.inzage.api.CodeWaarde;
-import nl.kadaster.koers.view.inzage.api.Identificatie;
-import nl.kadaster.koers.view.inzage.api.tenaamstelling.Tenaamstelling;
+import nl.kadaster.brk.graphql.CodeWaarde;
+import nl.kadaster.brk.graphql.Identificatie;
+import nl.kadaster.brk.graphql.tenaamstelling.Tenaamstelling;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ public class ZakelijkRecht {
         }
     }
 
-    public nl.kadaster.koers.view.inzage.api.tenaamstelling.Tenaamstelling findTenaamStelling(final String tenaamStellingId) {
+    public nl.kadaster.brk.graphql.tenaamstelling.Tenaamstelling findTenaamStelling(final String tenaamStellingId) {
         for (Tenaamstelling tenaamstelling : tenaamstellingen) {
             if (tenaamstelling.identificatie.compositeId.equals(tenaamStellingId)) {
                 return tenaamstelling;

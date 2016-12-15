@@ -23,6 +23,7 @@ import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLIn;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
 import nl.kadaster.brk.graphql.kadastraalobject.KadastraalObject;
+import nl.kadaster.brk.graphql.kadastraalobject.KadastraleAanduiding;
 import org.apache.commons.lang3.StringUtils;
 
 @GraphQLObject("Root")
@@ -30,11 +31,16 @@ public class RootObjectType {
 
     @GraphQLField
     public KadastraalObject kadastraalObject(@GraphQLIn("kadastraalObjectId") final String kadastraalObjectId) {
-        KadastraalObject kadastraalObject = null;
+        KadastraalObject ko = null;
         if (StringUtils.isNotBlank(kadastraalObjectId)) {
-            kadastraalObject = new KadastraalObject("NL.KadastraalObject." + kadastraalObjectId, "Rotterdam A1234");
+            ko = new KadastraalObject();
+            ko.aanduiding = new KadastraleAanduiding();
+            ko.aanduiding.kadastraleGemeente = "Rotterdam";
+            ko.aanduiding.sectie = "A";
+            ko.aanduiding.perceelNummer = "1234";
+            ko.identificatie = new Identificatie("NL.KadastraalObject." + kadastraalObjectId, kadastraalObjectId);
         }
-        return kadastraalObject;
+        return ko;
     }
 
 }

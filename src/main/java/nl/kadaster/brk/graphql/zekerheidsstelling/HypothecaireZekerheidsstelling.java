@@ -1,4 +1,4 @@
-package nl.kadaster.koers.view.inzage.api.zekerheidsstelling;
+package nl.kadaster.brk.graphql.zekerheidsstelling;
 
 /**
  * @author Marc van Andel

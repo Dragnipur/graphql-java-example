@@ -1,4 +1,4 @@
-package nl.kadaster.koers.view.inzage.api.aantekening;
+package nl.kadaster.brk.graphql.aantekening;
 
 /**
  * @author Marc van Andel
