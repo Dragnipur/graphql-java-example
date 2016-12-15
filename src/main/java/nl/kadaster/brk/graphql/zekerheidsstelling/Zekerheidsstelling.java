@@ -3,7 +3,7 @@ package nl.kadaster.brk.graphql.zekerheidsstelling;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import nl.kadaster.brk.datatype.BepaaldAandeel;
+import nl.kadaster.brk.graphql.datatype.BepaaldAandeel;
 import nl.kadaster.brk.graphql.CodeWaarde;
 import nl.kadaster.brk.graphql.Identificatie;
 

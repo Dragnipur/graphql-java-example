@@ -1,9 +1,9 @@
 package nl.kadaster.brk.graphql.tenaamstelling;
 
 import nl.kadaster.brk.datatype.Aandeel;
-import nl.kadaster.brk.datatype.BepaaldAandeel;
 import nl.kadaster.brk.graphql.Identificatie;
 import nl.kadaster.brk.graphql.aantekening.Aantekening;
+import nl.kadaster.brk.graphql.datatype.BepaaldAandeel;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.slf4j.LoggerFactory;
