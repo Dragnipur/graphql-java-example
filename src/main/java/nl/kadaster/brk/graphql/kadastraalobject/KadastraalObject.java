@@ -24,7 +24,9 @@ public class KadastraalObject {
     @GraphQLField
     @GraphQLDescription("De grootte van een Perceel")
     public KadastraleGrootte grootte = new KadastraleGrootte();
-//    public String typeGrens;
+    @GraphQLField
+    @GraphQLDescription("Het type grens van een Perceel")
+    public String typeGrens;
 //    public Koopsom koopsom;
 //
 //    private List<Aantekening> aantekeningen = new ArrayList<>();
