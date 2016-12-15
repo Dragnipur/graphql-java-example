@@ -17,33 +17,25 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package jfall.graphql.demo.schema;
+package nl.kadaster.brk.graphql;
 
 import com.oembedler.moon.graphql.engine.stereotype.*;
-import jfall.graphql.demo.schema.objecttype.LoginInput;
-import jfall.graphql.demo.schema.objecttype.RootObjectType;
-import jfall.graphql.demo.schema.objecttype.Talk;
-import jfall.graphql.demo.schema.objecttype.TimeslotInput;
 
 @GraphQLSchema
-public class JfallSchema {
+public class BRKSchema {
 
     @GraphQLSchemaQuery
     private RootObjectType root;
 
+    /**
+     * This method is needed because the {@link com.oembedler.moon.graphql.engine.GraphQLSchemaBuilder} expects at least
+     * one mutation in the schema.
+     */
     @GraphQLMutation
-    public
-    @GraphQLOut("talk")
-    Talk changeTimeslot(@GraphQLIn("TimeSlotInput") TimeslotInput input) {
-        Talk talk = StaticData.talks.get(input.getTalkId());
-        talk.setTimeslot(input.getTimeslot());
-        return talk;
+    @GraphQLOut("fakeMutation")
+    public String fakeMutation(@GraphQLIn("something") String input) {
+        //authorization logic
+        return "nothing";
     }
 
-    @GraphQLMutation
-    @GraphQLOut("token")
-    public String login(@GraphQLIn("LoginInput") LoginInput input) {
-        //authorization logic
-        return "token";
-    }
 }

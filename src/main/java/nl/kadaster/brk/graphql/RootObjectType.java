@@ -17,18 +17,30 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package jfall.graphql.demo;
+package nl.kadaster.brk.graphql;
 
-import com.oembedler.moon.graphql.boot.EnableGraphQLServer;
-import graphql.GraphQLError;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLField;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLIn;
+import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
+import nl.kadaster.brk.graphql.kadastraalobject.KadastraalObject;
+import nl.kadaster.brk.graphql.kadastraalobject.KadastraleAanduiding;
+import org.apache.commons.lang3.StringUtils;
 
-@SpringBootApplication
-@EnableGraphQLServer
-public class JfallDemoApp {
+@GraphQLObject("Root")
+public class RootObjectType {
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(JfallDemoApp.class, args);
+    @GraphQLField
+    public KadastraalObject kadastraalObject(@GraphQLIn("kadastraalObjectId") final String kadastraalObjectId) {
+        KadastraalObject ko = null;
+        if (StringUtils.isNotBlank(kadastraalObjectId)) {
+            ko = new KadastraalObject();
+            ko.aanduiding = new KadastraleAanduiding();
+            ko.aanduiding.kadastraleGemeente = "Rotterdam";
+            ko.aanduiding.sectie = "A";
+            ko.aanduiding.perceelNummer = "1234";
+            ko.identificatie = new Identificatie("NL.KadastraalObject." + kadastraalObjectId, kadastraalObjectId);
+        }
+        return ko;
     }
+
 }
