@@ -27,6 +27,10 @@ public class BRKSchema {
     @GraphQLSchemaQuery
     private RootObjectType root;
 
+    /**
+     * This method is needed because the {@link com.oembedler.moon.graphql.engine.GraphQLSchemaBuilder} expects at least
+     * one mutation in the schema.
+     */
     @GraphQLMutation
     @GraphQLOut("fakeMutation")
     public String fakeMutation(@GraphQLIn("something") String input) {
