@@ -30,11 +30,11 @@ public class RootObjectType {
 
     @GraphQLField
     public KadastraalObject kadastraalObject(@GraphQLIn("kadastraalObjectId") final String kadastraalObjectId) {
-        if (StringUtils.isBlank(kadastraalObjectId)) {
-            return null;
-        } else {
-            return new KadastraalObject("NL.KadastraalObject.000000000001", "Rotterdam A1234");
+        KadastraalObject kadastraalObject = null;
+        if (StringUtils.isNotBlank(kadastraalObjectId)) {
+            kadastraalObject = new KadastraalObject("NL.KadastraalObject." + kadastraalObjectId, "Rotterdam A1234");
         }
+        return kadastraalObject;
     }
 
 }
